@@ -1,14 +1,16 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: Caizz's note
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: .
+  baseUrl: note.caizz.me
   ignorePatterns:
+    - .git
+    - .gitignore
     - private
     - templates
     - .obsidian
@@ -244,12 +246,11 @@ plugins:
   - source: github:quartz-community/note-properties
     enabled: true
     options:
-      includeAll: false
+      includeAll: true
       includedProperties:
         - description
         - tags
-        - aliases
-      excludedProperties: []
+      excludedProperties: [created, updated, title, modified]
       hidePropertiesView: false
       delimiters: ---
       language: yaml
@@ -264,7 +265,7 @@ plugins:
       subdir: plugin
     enabled: true
     options:
-      theme: default
+      theme: typewriter
   - source: github:quartz-community/obsidian-plugin-excalidraw
     enabled: true
     options:
