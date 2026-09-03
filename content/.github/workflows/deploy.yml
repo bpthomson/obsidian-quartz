@@ -1,0 +1,10 @@
+name: Trigger Cloudflare Build
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Cloudflare Webhook
+        run: curl -X POST "${{ secrets.CLOUDFLARE_WEBHOOK }}"
